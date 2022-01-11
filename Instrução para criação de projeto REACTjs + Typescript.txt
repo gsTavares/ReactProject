@@ -1,0 +1,108 @@
+// Conceitos ReactJS
+
+Segue os padrões de uma SPA (Single Page Aplications)
+Biblioteca de construção de interfaces para melhorar a experência do usuário final
+
+
+// Instruções -- Criação do projeto
+
+1- Criar uma pasta
+2 - Acessar o diretório dessa pasta
+3 - No PowerShell --> yarn create react-app *nome do diretório do projeto* --template typescritpt
+4 - Acessar o diretório criado + code .
+5 - No terminal --> yarn start
+
+// Ambiente
+
+1- Excluir:
+
+	- README.md (Informações do projeto)
+
+2- Dentro da pasta scr, excluir:
+
+	- App.css
+	- Index.css
+	- App.test.tsx
+	- logo.svg
+	- ServiceWorker.ts
+	- SetupTests.ts
+
+3- Remover as importações dos arquivos excluídos
+
+4- Dentro da pasta public, excluir:
+
+	- Tudo, menos o index.html
+	- Dentro da index.html:
+		- Remover o link pro favicon
+		- Remover tag meta description
+		- Remover os dois links ("app-touch-icon" e "manifest")
+		- Remover comentários
+
+// Entendendo arquivos
+
+.gitignore --> sistema de controle de versão
+package.json --> principais informações do projeto, dependências (react, react-dom, react-scripts, typescript)
+tsconfig.json --> configurações do typescript
+yarn.lock --> anota as versões de cada dependência instalada
+node_modules --> local onde se encontrarm todas as dependências
+pasta public --> só vai conter o favicon e o index.html
+
+// Componentes
+
+Componentes são funções que retornam HTML dentro da aplicação. O nome dessas funções deve sempre inciar com letra MAIÚSCULA.
+A importação do React é obrigatória para a criação desses componentes.
+
+// Organização do projeto
+
+1- Criar uma pasta 'assets' para conter todas as artes utlizadas na aplicação
+1.1 - Além das imagens, criar uma pasta 'styles' para conter os arquivos CSS globais.
+
+// Padronização do global.css (mobile first)
+
+1- :root {
+	font-size: 60%;
+	variáveis de cores;
+	
+}
+
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html, body, #root {
+	height: 100vh;
+}
+
+body {
+	background: var de cor;
+	
+}
+
+#root {
+	display: flex;
+	align-itens: center;
+	justify-content: center;
+}
+
+body, input, button, textarea {
+	definir a fonte para esses elementos (utilizar google fonts --> selecionar fontes --> embed --> copiar link --> adicionar no index.html)
+	font: 500 1.6rem (16px) + fonte importada (*9.6px === 1rem* --> font-size: 60%)
+}
+
+.container (mobile){
+	width: 90vw;
+	max-width: 700px;
+}
+
+@media (min-width: 700px){
+	:root {
+		font-size: 62.5%;
+	}
+}
+
+// Para a construção das telas
+
+1- Criar uma pasta 'pages' dentro da 'src'.
+2 - Criar uma estilização para cada componente.
